@@ -12,9 +12,20 @@ npm start
 
 Send requests:
 
+HTTP:
+
 ```http
 GET /banana.jpg HTTP/1.1
 Host: http://localhost:8080
-# or whatever the server URL is
 Target-URL: https://www.someotherserver.com/images
+```
+
+JavaScript/TypeScript:
+
+```typescript
+const { data } = await axios.get("http://localhost:8080", {
+	headers: {
+		"Target-URL": "https://www.someotherserver.com/images"	
+	}
+})
 ```
